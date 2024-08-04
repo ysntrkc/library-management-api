@@ -33,7 +33,6 @@ module.exports = (sequelize, DataTypes) => {
 
 	}
 	Users.init({
-		id: DataTypes.INTEGER,
 		name: DataTypes.STRING,
 	}, {
 		sequelize,

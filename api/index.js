@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import http from 'http';
+import routes from './routes';
 
 import './db/config/config';
 
@@ -15,6 +16,8 @@ app.use((req, _res, next) => {
 	req.headers.language = req.headers.language || 'en';
 	next();
 });
+
+app.use('/', routes);
 
 app.get('/health', (_req, res) => {
 	return res.json({

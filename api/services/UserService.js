@@ -1,4 +1,4 @@
-import db from '../src/models';
+import db from '../db/models';
 
 import {Lang} from '../localizations';
 

@@ -12,7 +12,7 @@ require('fs')
 	.forEach(file => {
 		const routeName = FileHelper.getFileRoute(file);
 		app.use(
-			`/${routeName}`,
+			`/${routeName}s`,
 			require(`./${file}`).default,
 		);
 	});
