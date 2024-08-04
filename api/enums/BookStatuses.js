@@ -1,4 +1,4 @@
-export const BookStatuses = {
+export default {
 	AVAILABLE: 1,
 	BORROWED: 2,
 };

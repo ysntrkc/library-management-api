@@ -3,7 +3,7 @@ const {
 	Model,
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-	class Books extends Model {
+	class UserBookStatuses extends Model {
 
 		/**
      * Helper method for defining associations.
@@ -11,19 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
 		static associate(models) {
-			Books.belongsTo(models.BookStatuses, {
+			UserBookStatuses.hasMany(models.UserBooks, {
 				foreignKey: 'status_id',
-				as: 'Status',
+				as: 'UserBooks',
 			});
 		}
 
 	}
-	Books.init({
+	UserBookStatuses.init({
 		name: DataTypes.STRING,
-		status_id: DataTypes.INTEGER,
 	}, {
 		sequelize,
-		modelName: 'Books',
+		modelName: 'UserBookStatuses',
 	});
-	return Books;
+	return UserBookStatuses;
 };

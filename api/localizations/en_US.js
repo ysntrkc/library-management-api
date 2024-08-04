@@ -1,10 +1,18 @@
 /* eslint-disable max-len */
 export default {
+	BookStatuses: {
+		1: 'Available',
+		2: 'Borrowed',
+	},
 	User: {
 		getSuccess: 'User retrieved successfully',
 		getAllSuccess: 'Users retrieved successfully',
 		notFound: 'User not found',
 		createSuccess: 'User created successfully',
+	},
+	UserBookStatus: {
+		1: 'Borrowed',
+		2: 'Returned',
 	},
 	Joi: {
 		'any.required': '{{#label}} is required',

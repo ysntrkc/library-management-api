@@ -1,10 +1,18 @@
 /* eslint-disable max-len */
 export default {
+	BookStatuses: {
+		1: 'Mevcut',
+		2: 'Ödünç Alındı',
+	},
 	User: {
 		getSuccess: 'Kullanıcı başarıyla alındı',
 		getAllSuccess: 'Kullanıcılar başarıyla alındı',
 		notFound: 'Kullanıcı bulunamadı',
 		createSuccess: 'Kullanıcı başarıyla oluşturuldu',
+	},
+	UserBookStatus: {
+		1: 'Ödünç Alındı',
+		2: 'Geri Getirildi',
 	},
 	Joi: {
 		'any.required': '{{#label}} gerekli',

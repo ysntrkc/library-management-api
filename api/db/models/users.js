@@ -2,6 +2,9 @@
 const {
 	Model,
 } = require('sequelize');
+
+const UserBookStatuses = require('../../enums/UserBookStatuses');
+
 module.exports = (sequelize, DataTypes) => {
 	class Users extends Model {
 
@@ -11,7 +14,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
 		static associate(models) {
-			// define association here
+			Users.hasMany(models.UserBooks, {
+				foreignKey: 'user_id',
+				as: 'CurrentUserBooks',
+				scope: {
+					status_id: UserBookStatuses.BORROWED,
+				},
+			});
+
+			Users.hasMany(models.UserBooks, {
+				foreignKey: 'user_id',
+				as: 'ReturnedUserBooks',
+				scope: {
+					status_id: UserBookStatuses.RETURNED,
+				},
+			});
 		}
 
 	}
