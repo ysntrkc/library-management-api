@@ -52,4 +52,4 @@ npm start
 ## Usage
 
 You can see endpoints by running the server and going to `http://localhost:3000/api-docs/`.
-You can also import the Postman collection from [here](./docs/Library%20Case%20API%20Collection.postman_collection.json).
+You can also import the Postman collection from [here](./docs/postman_collection.json).
