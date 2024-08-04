@@ -2,17 +2,17 @@ import db from '../db/models';
 
 import {Lang} from '../localizations';
 
-class User {
+class UserService {
 
 	static async create(req) {
 		try {
-			const {lang} = req.headers;
+			const {language} = req.headers;
 			const {name} = req.body;
 
 			await db.Users.create({
 				name: name,
 			});
-			return {type: true, message: Lang[lang].User.createSuccess};
+			return {type: true, message: Lang[language].User.createSuccess};
 		}
 		catch (error) {
 			return {type: false, message: error.message};
@@ -21,14 +21,14 @@ class User {
 
 	static async getAll(req) {
 		try {
-			const {lang} = req.headers;
+			const {language} = req.headers;
 			const users = await db.Users.findAll({
 				attributes: [
 					'id',
 					'name',
 				],
 			});
-			return {type: true, message: Lang[lang].User.getAllSuccess, data: users};
+			return {type: true, message: Lang[language].User.getAllSuccess, data: users};
 		}
 		catch (error) {
 			return {type: false, message: error.message};
@@ -37,7 +37,7 @@ class User {
 
 	static async get(req) {
 		try {
-			const {lang} = req.headers;
+			const {language} = req.headers;
 			const {id} = req.params;
 
 			const user = await db.Users.findOne({
@@ -48,11 +48,21 @@ class User {
 					'id',
 					'name',
 				],
+				includes: [
+					{
+						model: db.UserBooks,
+						as: 'CurrentUserBooks',
+					},
+					{
+						model: db.UserBooks,
+						as: 'ReturnedUserBooks',
+					},
+				],
 			});
 			if (!user) {
-				return {type: false, message: Lang[lang].User.notFound};
+				return {type: false, message: Lang[language].User.notFound};
 			}
-			return {type: true, message: Lang[lang].User.getSuccess, data: user};
+			return {type: true, message: Lang[language].User.getSuccess, data: user};
 		}
 		catch (error) {
 			return {type: false, message: error.message};
@@ -61,4 +71,4 @@ class User {
 
 }
 
-export default User;
+export default UserService;

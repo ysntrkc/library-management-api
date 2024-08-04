@@ -1,5 +1,12 @@
 /* eslint-disable max-len */
 export default {
+	Book: {
+		getSuccess: 'Kitap başarıyla alındı',
+		getAllSuccess: 'Kitaplar başarıyla alındı',
+		notFound: 'Kitap bulunamadı',
+		createSuccess: 'Kitap başarıyla oluşturuldu',
+		alreadyBorrowed: 'Kitap zaten biri tarafından ödünç alındı',
+	},
 	BookStatuses: {
 		1: 'Mevcut',
 		2: 'Ödünç Alındı',

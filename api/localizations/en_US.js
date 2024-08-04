@@ -1,5 +1,12 @@
 /* eslint-disable max-len */
 export default {
+	Book: {
+		getSuccess: 'Book retrieved successfully',
+		getAllSuccess: 'Books retrieved successfully',
+		notFound: 'Book not found',
+		createSuccess: 'Book created successfully',
+		alreadyBorrowed: 'Book already borrowed by someone',
+	},
 	BookStatuses: {
 		1: 'Available',
 		2: 'Borrowed',

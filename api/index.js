@@ -13,7 +13,7 @@ const server = http.createServer(app);
 app.use(bodyParser.json());
 
 app.use((req, _res, next) => {
-	req.headers.language = req.headers.language || 'en';
+	req.headers.language = req.headers.language || 'tr';
 	next();
 });
 

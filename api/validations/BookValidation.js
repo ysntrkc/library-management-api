@@ -2,7 +2,7 @@ import Joi from 'joi';
 
 import ValidationHelper from '../helpers/ValidationHelper';
 
-class UserValidation {
+class BookValidation {
 
 	static create(data, language) {
 		const schema = Joi.object({
@@ -30,4 +30,4 @@ class UserValidation {
 
 }
 
-export default UserValidation;
+export default BookValidation;
