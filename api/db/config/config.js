@@ -10,12 +10,12 @@ module.exports = {
 		logging: false,
 	},
 	test: {
-		database: process.env.DATABASE_NAME,
+		database: `${process.env.DATABASE_NAME}-test`,
 		username: process.env.DATABASE_USERNAME,
 		password: process.env.DATABASE_PASSWORD,
 		host: process.env.DATABASE_HOST,
 		dialect: process.env.DATABASE_DIALECT,
-		logging: true,
+		logging: false,
 	},
 	preProd: {
 		database: process.env.DATABASE_NAME,
