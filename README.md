@@ -1,4 +1,4 @@
-# Library Management API
+# Library Management APP Backend
 
 ## Description
 
@@ -33,15 +33,12 @@ npx sequelize-cli db:seed:all
 4. Create .env file in the root directory and add the following:
 
 ``` BASH
-PORT=5000
+PORT=3000
 NODE_ENV=development
 
-SESSION_SECRET={{your-session-secret}}
-SESSION_LIFETIME={{session-lifetime-in-milliseconds}}
-
-DATABASE_NAME=quiz-app
-DATABASE_USERNAME=postgres
-DATABASE_PASSWORD=postgres
+DATABASE_NAME=library-management-app
+DATABASE_USERNAME={{your-db-username}}
+DATABASE_PASSWORD={{your-db-password}}
 DATABASE_HOST=127.0.0.1
 DATABASE_DIALECT=postgres
 ```
@@ -54,4 +51,5 @@ npm start
 
 ## Usage
 
-You can see endpoints by running the server and going to `http://localhost:5000/api-docs/`.
+You can see endpoints by running the server and going to `http://localhost:3000/api-docs/`.
+You can also import the Postman collection from [here](./docs/Library%20Case%20API%20Collection.postman_collection.json).

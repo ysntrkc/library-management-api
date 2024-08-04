@@ -153,6 +153,10 @@ export default [
 			'space-infix-ops': [
 				'error',
 			],
+			'no-unused-vars': [
+				'error',
+				{argsIgnorePattern: '^_'},
+			],
 		},
 	},
 ];
