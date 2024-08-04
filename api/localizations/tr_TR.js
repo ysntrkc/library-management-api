@@ -6,6 +6,7 @@ export default {
 		notFound: 'Kitap bulunamadı',
 		createSuccess: 'Kitap başarıyla oluşturuldu',
 		alreadyBorrowed: 'Kitap zaten biri tarafından ödünç alındı',
+		alreadyAvailable: 'Kitap zaten biri tarafından geri getirildi',
 	},
 	BookStatuses: {
 		1: 'Mevcut',
@@ -16,6 +17,12 @@ export default {
 		getAllSuccess: 'Kullanıcılar başarıyla alındı',
 		notFound: 'Kullanıcı bulunamadı',
 		createSuccess: 'Kullanıcı başarıyla oluşturuldu',
+		borrowBookSuccess: 'Kitap başarıyla ödünç alındı',
+		returnBookSuccess: 'Kitap başarıyla geri getirildi',
+	},
+	UserBook: {
+		notFound: 'Kullanıcın bu kitap ile ilgili kaydı bulunamadı',
+		alreadyReturned: 'Kitap zaten kullanıcı tarafından geri getirildi',
 	},
 	UserBookStatus: {
 		1: 'Ödünç Alındı',

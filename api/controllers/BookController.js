@@ -20,7 +20,7 @@ class BookController {
 	 */
 	static async create(req, res) {
 		try {
-			const validationResult = BookValidation.create(req.body, req.query.language);
+			const validationResult = BookValidation.create(req.body, req.headers.language);
 			if (!validationResult.type) {
 				return res.json(ResponseHelper.response(ResponseTypes.ERROR, validationResult.message));
 			}
@@ -65,7 +65,7 @@ class BookController {
 	 */
 	static async get(req, res) {
 		try {
-			const validationResult = BookValidation.get(req.params, req.query.language);
+			const validationResult = BookValidation.get(req.params, req.headers.language);
 			if (!validationResult.type) {
 				return res.json(ResponseHelper.response(ResponseTypes.ERROR, validationResult.message));
 			}

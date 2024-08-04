@@ -6,6 +6,7 @@ export default {
 		notFound: 'Book not found',
 		createSuccess: 'Book created successfully',
 		alreadyBorrowed: 'Book already borrowed by someone',
+		alreadyAvailable: 'Book already returned by someone',
 	},
 	BookStatuses: {
 		1: 'Available',
@@ -16,6 +17,11 @@ export default {
 		getAllSuccess: 'Users retrieved successfully',
 		notFound: 'User not found',
 		createSuccess: 'User created successfully',
+		borrowBookSuccess: 'Book borrowed successfully',
+		returnBookSuccess: 'Book returned successfully',
+	},
+	UserBook: {
+		notFound: 'User has no record for this book',
 	},
 	UserBookStatus: {
 		1: 'Borrowed',
