@@ -46,7 +46,7 @@ DATABASE_DIALECT=postgres
 5. Run the server:
 
 ``` BASH
-npm start
+pnpm start
 ```
 
 ## Usage
