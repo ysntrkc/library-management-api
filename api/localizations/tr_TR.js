@@ -19,6 +19,7 @@ export default {
 		createSuccess: 'Kullanıcı başarıyla oluşturuldu',
 		borrowBookSuccess: 'Kitap başarıyla ödünç alındı',
 		returnBookSuccess: 'Kitap başarıyla geri getirildi',
+		pointNotGiven: 'Puan verilmedi',
 	},
 	UserBook: {
 		notFound: 'Kullanıcın bu kitap ile ilgili kaydı bulunamadı',

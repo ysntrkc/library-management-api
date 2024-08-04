@@ -53,12 +53,55 @@ class BookService {
 				attributes: [
 					'id',
 					'name',
-					[ db.Sequelize.literal(`
+					[
+						db.Sequelize.literal(`
 							CASE
-								WHEN "status_id" = 1 THEN '${Lang[language].BookStatuses[1]}'
-								WHEN "status_id" = 2 THEN '${Lang[language].BookStatuses[2]}'
-							END
-					`), 'status' ],
+								WHEN "Status"."id" = 1 THEN '${Lang[language].BookStatuses[1]}'
+								WHEN "Status"."id" = 2 THEN '${Lang[language].BookStatuses[2]}'
+							END`),
+						'status',
+					],
+					[
+						db.Sequelize.literal(
+							'CAST(AVG("ScoredUserBooks"."score") AS DECIMAL(10, 2))',
+						), 'average_score',
+					],
+					[
+						db.Sequelize.fn('COUNT',
+							db.Sequelize.fn('DISTINCT', db.Sequelize.col('ScoredUserBooks.user_id')),
+						), 'users_rated',
+					],
+					[
+						db.Sequelize.fn('COUNT',
+							db.Sequelize.col('AllUserBooks.id'),
+						), 'times_borrowed',
+					],
+					[
+						db.Sequelize.fn('COUNT',
+							db.Sequelize.fn('DISTINCT', db.Sequelize.col('AllUserBooks.user_id')),
+						), 'users_borrowed',
+					],
+				],
+				include: [
+					{
+						model: db.BookStatuses,
+						as: 'Status',
+						attributes: [],
+					},
+					{
+						model: db.UserBooks,
+						as: 'ScoredUserBooks',
+						attributes: [],
+					},
+					{
+						model: db.UserBooks,
+						as: 'AllUserBooks',
+						attributes: [],
+					},
+				],
+				group: [
+					'Books.id',
+					'Status.id',
 				],
 			});
 			if (!book) {

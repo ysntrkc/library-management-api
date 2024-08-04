@@ -3,7 +3,7 @@ const {
 	Model,
 } = require('sequelize');
 
-const UserBookStatuses = require('../../enums/UserBookStatuses');
+const {default: UserBookStatuses} = require('../../enums/UserBookStatuses');
 
 module.exports = (sequelize, DataTypes) => {
 	class Users extends Model {

@@ -19,6 +19,7 @@ export default {
 		createSuccess: 'User created successfully',
 		borrowBookSuccess: 'Book borrowed successfully',
 		returnBookSuccess: 'Book returned successfully',
+		pointNotGiven: 'Point not given',
 	},
 	UserBook: {
 		notFound: 'User has no record for this book',

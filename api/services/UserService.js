@@ -50,14 +50,40 @@ class UserService {
 					'id',
 					'name',
 				],
-				includes: [
+				include: [
 					{
 						model: db.UserBooks,
 						as: 'CurrentUserBooks',
+						separate: true,
+						attributes: [
+							'book_id',
+							[ db.Sequelize.col('Book.name'), 'book' ],
+							'borrow_date',
+						],
+						include: [
+							{
+								model: db.Books,
+								attributes: [],
+							},
+						],
 					},
 					{
 						model: db.UserBooks,
 						as: 'ReturnedUserBooks',
+						separate: true,
+						attributes: [
+							'book_id',
+							[ db.Sequelize.col('Book.name'), 'book' ],
+							'score',
+							'borrow_date',
+							'return_date',
+						],
+						include: [
+							{
+								model: db.Books,
+								attributes: [],
+							},
+						],
 					},
 				],
 			});
