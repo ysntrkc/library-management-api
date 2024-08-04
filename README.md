@@ -19,7 +19,7 @@ git clone https://github.com/ysntrkc/library-management-api.git
 2. Install dependencies:
 
 ``` BASH
-npm install
+pnpm install
 ```
 
 3. Create database:
